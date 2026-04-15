@@ -946,11 +946,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardDisplay
   cardData: {fileID: 11400000, guid: 39f0c3b2286a98d4e8f2efeb2ab67ae6, type: 2}
+  cardIndex: 0
   cardRenderer: {fileID: 5903509077094919964}
   nameText: {fileID: 4020733248466901780}
   costText: {fileID: 3743740832108743531}
   attackText: {fileID: 3025953351874104997}
   descriptionText: {fileID: 7054673797701509030}
+  isDragging: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0

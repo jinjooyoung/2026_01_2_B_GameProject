@@ -5,6 +5,7 @@ public class CardDisplay : MonoBehaviour
 {
     [Header("카드 데이터(SO)")]
     public CardData cardData;
+    public int cardIndex;
 
     [Header("이미지, 텍스트")]
     public MeshRenderer cardRenderer;
@@ -13,7 +14,7 @@ public class CardDisplay : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro descriptionText;
 
-    private bool isDragging = false;
+    public bool isDragging = false;
     private Vector3 originalPosition;
 
     [Header("레이어 마스크")]
@@ -68,6 +69,13 @@ public class CardDisplay : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (CardManager.Instance.playerStats == null || CardManager.Instance.playerStats.currentMana < cardData.manaCost)
+        {
+            Debug.Log($"마나가 부족합니다! (필요: {cardData.manaCost}, 현재: {CardManager.Instance.playerStats.currentMana}");
+            transform.position = originalPosition;
+            return;
+        }
+
         isDragging = false;
 
         // 레이캐스트로 타겟 감지
@@ -117,15 +125,33 @@ public class CardDisplay : MonoBehaviour
                 }
             }
         }
+        else if (CardManager.Instance != null)
+        {
+            // 버린 카드 더미 근처에 드롭 했는지 검사
+            float distToDiscard = Vector3.Distance(transform.position, CardManager.Instance.discardPosition.position);
+            if (distToDiscard < 2.0f)
+            {
+                // 카드를 버리기
+                CardManager.Instance.DiscardCard(cardIndex);
+                return;
+            }
+        }
 
         // 카드를 사용하지 않으면 원래 위치로 되돌리기
         if (!cardUsed)
         {
             transform.position = originalPosition;
+            CardManager.Instance.ArrangeHand();
         }
         else
         {
-            Destroy(gameObject);
+            // 카드를 사용했다면 버린 카드 더미로 이동
+            if (CardManager.Instance != null)
+                CardManager.Instance.DiscardCard(cardIndex);
+
+            // 카드 사용 시 마나 소모
+            CardManager.Instance.playerStats.UseMana(cardData.manaCost);
+            Debug.Log($"마나를 {cardData.manaCost} 사용했습니다.");
         }
     }
 }
