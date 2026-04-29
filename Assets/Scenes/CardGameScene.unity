@@ -719,15 +719,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39f0c3b2286a98d4e8f2efeb2ab67ae6, type: 2}
   - {fileID: 11400000, guid: 04831473d4e33b644a8c17080c9e52ad, type: 2}
   - {fileID: 11400000, guid: b6e3076907e4f40469cefe1e2d0b1149, type: 2}
+  - {fileID: 11400000, guid: 962881f7dc3076d4c8724ab8dd7a6976, type: 2}
+  - {fileID: 11400000, guid: 154e7abf06f1ba342bdf9699a1444202, type: 2}
   - {fileID: 11400000, guid: 39f0c3b2286a98d4e8f2efeb2ab67ae6, type: 2}
   - {fileID: 11400000, guid: 04831473d4e33b644a8c17080c9e52ad, type: 2}
   - {fileID: 11400000, guid: b6e3076907e4f40469cefe1e2d0b1149, type: 2}
+  - {fileID: 11400000, guid: 962881f7dc3076d4c8724ab8dd7a6976, type: 2}
+  - {fileID: 11400000, guid: 154e7abf06f1ba342bdf9699a1444202, type: 2}
   - {fileID: 11400000, guid: 39f0c3b2286a98d4e8f2efeb2ab67ae6, type: 2}
   - {fileID: 11400000, guid: 04831473d4e33b644a8c17080c9e52ad, type: 2}
   - {fileID: 11400000, guid: b6e3076907e4f40469cefe1e2d0b1149, type: 2}
+  - {fileID: 11400000, guid: 962881f7dc3076d4c8724ab8dd7a6976, type: 2}
+  - {fileID: 11400000, guid: 154e7abf06f1ba342bdf9699a1444202, type: 2}
   - {fileID: 11400000, guid: 39f0c3b2286a98d4e8f2efeb2ab67ae6, type: 2}
   - {fileID: 11400000, guid: 04831473d4e33b644a8c17080c9e52ad, type: 2}
   - {fileID: 11400000, guid: b6e3076907e4f40469cefe1e2d0b1149, type: 2}
+  - {fileID: 11400000, guid: 962881f7dc3076d4c8724ab8dd7a6976, type: 2}
+  - {fileID: 11400000, guid: 154e7abf06f1ba342bdf9699a1444202, type: 2}
+  - {fileID: 11400000, guid: 447d15952fc340b45a51f9edf328cb49, type: 2}
+  - {fileID: 11400000, guid: 447d15952fc340b45a51f9edf328cb49, type: 2}
+  - {fileID: 11400000, guid: 447d15952fc340b45a51f9edf328cb49, type: 2}
+  - {fileID: 11400000, guid: 447d15952fc340b45a51f9edf328cb49, type: 2}
   handCards: []
   discardCards: []
   cardPrefab: {fileID: 8360762608504722920, guid: f905776f72a514a44a9a8fe67b4555e0, type: 3}
@@ -736,6 +748,7 @@ MonoBehaviour:
   discardPosition: {fileID: 1827412358}
   cardObjects: []
   playerStats: {fileID: 2005486850}
+  enemyStats: {fileID: 0}
 --- !u!4 &1103982928
 Transform:
   m_ObjectHideFlags: 0
@@ -1034,7 +1047,7 @@ MonoBehaviour:
   charcterName: "\uD50C\uB808\uC774\uC5B4"
   maxHp: 100
   currentHp: 0
-  maxMana: 10
+  maxMana: 300
   currentMana: 0
   manaBar: {fileID: 0}
   manaText: {fileID: 0}
